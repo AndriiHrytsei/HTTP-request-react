@@ -44,12 +44,12 @@ export default class App extends Component {
     const { countries, filter, isLoaded, error } = this.state;
     return (
       <>
-        {error && <p>Error: {error.message}</p>}
         {isLoaded ? (
           <p>Loading...</p>
-        ) : (
-          <>
+          ) : (
+            <>
             <SearchFilter filterChange={this.handleFilterChange} />
+            {error && <p>Error: {error.message}</p>}
             {countries.length > 0 && (
               <CountryList items={countries} filterVal={filter} />
             )}
